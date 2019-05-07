@@ -6,6 +6,8 @@ import Explore from './pages/Explore'
 import About from './pages/About'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import Client from './pages/Client'
+import Creator from './pages/Creator'
 
 
 import XCollection from './pages/XCollection'
@@ -30,6 +32,8 @@ class App extends Component {
           <Route exact path='/About' component={About} />
           <Route exact path='/Login' component={Login} />
           <Route exact path='/SignUp' component={SignUp} />
+          <Route exact path='/Client' component={Client} />
+          <Route exact path='/Creator' component={Creator} /> 
           <Route exact path='/XCollection/:id' component={XCollection} />
           <Route component={XNoMatch} />
         </Switch>

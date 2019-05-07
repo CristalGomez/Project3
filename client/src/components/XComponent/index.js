@@ -1,2 +1,2 @@
-export { XComponentOne } from "./XComponentOne.js";
-export { XComponentTwo } from "./XComponentTwo.js"
+export { DefaultButton } from "./Button.js";
+export { XComponentTwo } from "./XComponentTwo.js";
