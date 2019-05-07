@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import API from '../../utils/API';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
 import { XComponentOne, XComponentTwo } from '../../components/XComponent'
 
-class XPage extends Component {
+class XPageTwo extends Component {
   state = {
-    array: ['X', 'Page', 'Array'],
-    string: 'XPageString',
+    array: ['X', 'PageTwo', 'Array'],
+    string: 'XPageTwoString',
   };
 
   componentDidMount() {
@@ -17,13 +17,16 @@ class XPage extends Component {
 
   render() {
     return (<div>
-      <Link to={"/XPageTwo"}>
-        <strong>Go to XPageTwo</strong>
+      <Link to={"/"}>
+        <strong>Go to XPageOne</strong>
       </Link>
       <XComponentOne array={this.state.array} string={this.state.string} />
       <XComponentTwo array={this.state.array} string={this.state.string} />
+
+
+      About
     </div>);
   }
 }
 
-export default XPage;
+export default XPageTwo;
