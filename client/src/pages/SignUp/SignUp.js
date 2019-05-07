@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { DefaultButton, XComponentTwo } from '../../components/XComponent'
+import { XComponentOne, XComponentTwo } from '../../components/XComponent'
 
-class Explore extends Component {
+class SignUp extends Component {
   state = {
     array: ['X', 'PageTwo', 'Array'],
     string: 'XPageTwoString',
@@ -17,9 +17,9 @@ class Explore extends Component {
 
   render() {
     return (<div>
-      EXPLORE PAGE
+      SIGNUP PAGE
     </div>);
   }
 }
 
-export default Explore;
+export default SignUp;

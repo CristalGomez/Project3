@@ -17,14 +17,7 @@ class XPage extends Component {
 
   render() {
     return (<div>
-      <Link to={"/XPageTwo"}>
-        <strong>Go to XPageTwo</strong>
-      </Link>
-      <DefaultButton array={this.state.array} string={this.state.string} />
-      <DefaultButton array={this.state.array} string={this.state.string} />
-      <DefaultButton array={this.state.array} string={this.state.string} />
-      <XComponentTwo array={this.state.array} string={this.state.string} />
-      <p>Lorem ipsum.....</p>
+      HOME PAGE
     </div>);
   }
 }

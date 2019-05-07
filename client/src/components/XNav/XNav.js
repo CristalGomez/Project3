@@ -1,5 +1,6 @@
 import React from 'react';
 import './XNav.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import React from 'react';
 import {
@@ -33,7 +34,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">iiMage</NavbarBrand>
+          <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -45,18 +46,18 @@ export default class Example extends React.Component {
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Login | Sign Up
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
+                  <DropdownItem href="/Login">
+                    Login
                   </DropdownItem>
-                  <DropdownItem>
-                    Option 2
+                  <DropdownItem href="/SignUp">
+                    Sign Up
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    Reset
+                    IDK what to put here yet
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
