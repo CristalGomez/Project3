@@ -22,6 +22,7 @@ class XPageTwo extends Component {
       </Link>
       <XComponentOne array={this.state.array} string={this.state.string} />
       <XComponentTwo array={this.state.array} string={this.state.string} />
+      EXplore
     </div>);
   }
 }

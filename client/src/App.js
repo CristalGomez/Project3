@@ -1,8 +1,9 @@
 import React from 'react';
 import {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import XPage from './pages/XPage';
-import XPageTwo from './pages/XPageTwo'
+import Home from './pages/Home';
+import Explore from './pages/Explore'
+import About from './pages/About'
 import XCollection from './pages/XCollection'
 import XNoMatch from './pages/XNoMatch';
 import XNav from './components/XNav/XNav';
@@ -15,8 +16,9 @@ class App extends Component {
       <div>
         <XNav />
         <Switch>
-          <Route exact path='/' component={XPage} />
-          <Route exact path='/XPageTwo' component={XPageTwo} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/Explore' component={Explore} />
+          <Route exact path='/About' component={About} />
           <Route exact path='/XCollection/:id' component={XCollection} />
           <Route component={XNoMatch} />
         </Switch>
