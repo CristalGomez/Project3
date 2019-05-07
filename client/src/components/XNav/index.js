@@ -1,1 +1,1 @@
-export { XNav } from "./XNav.js";
+export { NavBar } from "./NavBar.js/index.js";
