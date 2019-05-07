@@ -3,14 +3,11 @@ import './XComponent.css';
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-const XComponentOne = (props) => {
+const DefaultButton = (props) => {
   return (
-    <div className="XComponentClass" {...props}>
-    XComponentOne
-      {props.string}
-      {props.array}
-    </div>
+    <button onClick = {props.onClick}>{props.title}
+    </button>
   );
 }
 
-export { XComponentOne };
+export { DefaultButton };
