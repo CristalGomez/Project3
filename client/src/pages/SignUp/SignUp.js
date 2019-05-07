@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { XComponentOne, XComponentTwo } from '../../components/XComponent'
 
-class About extends Component {
+class SignUp extends Component {
   state = {
     array: ['X', 'PageTwo', 'Array'],
     string: 'XPageTwoString',
@@ -17,9 +17,9 @@ class About extends Component {
 
   render() {
     return (<div>
-        ABOUT PAGE
+      SIGNUP PAGE
     </div>);
   }
 }
 
-export default About;
+export default SignUp;

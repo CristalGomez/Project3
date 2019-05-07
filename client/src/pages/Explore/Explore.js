@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { XComponentOne, XComponentTwo } from '../../components/XComponent'
 
-class XPageTwo extends Component {
+class Explore extends Component {
   state = {
     array: ['X', 'PageTwo', 'Array'],
     string: 'XPageTwoString',
@@ -17,14 +17,9 @@ class XPageTwo extends Component {
 
   render() {
     return (<div>
-      <Link to={"/"}>
-        <strong>Go to XPageOne</strong>
-      </Link>
-      <XComponentOne array={this.state.array} string={this.state.string} />
-      <XComponentTwo array={this.state.array} string={this.state.string} />
-      EXplore
+      EXPLORE PAGE
     </div>);
   }
 }
 
-export default XPageTwo;
+export default Explore;
