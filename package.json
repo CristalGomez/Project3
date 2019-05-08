@@ -33,10 +33,14 @@
     "express": "^4.16.3",
     "i": "^0.3.6",
     "if-env": "^1.0.4",
+    "material-ui": "^0.20.2",
     "mongoose": "^5.2.10",
     "morgan": "^1.9.0",
     "npm": "^6.9.0",
+    "react-dropzone": "^10.1.4",
+    "react-tap-event-plugin": "^3.0.3",
     "reactstrap": "^8.0.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "superagent": "^5.0.5"
   }
 }

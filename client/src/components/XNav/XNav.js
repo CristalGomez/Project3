@@ -31,7 +31,9 @@ export default class Example extends React.Component {
     });
   }
   render() {
+
     return (
+      
       <div>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
@@ -64,10 +66,13 @@ export default class Example extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
+
+
       </div>
     );
   }
 }
+
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually

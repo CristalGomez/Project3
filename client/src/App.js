@@ -1,5 +1,5 @@
 import React from 'react';
-import {Component} from 'react';
+import { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Explore from './pages/Explore'
@@ -18,12 +18,47 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+// import './App.css';
+import LoginSignup from './components/LoginSignup';
+
 library.add(faStroopwafel)
 
 
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
+
+
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      loginPage: [],
+      uploadScreen: []
+    }
+  }
+  componentWillMount() {
+    var loginPage = [];
+    loginPage.push(<LoginSignup parentContext={this} />);
+    this.setState({
+      loginPage: loginPage
+    })
+  }
+
+
   render() {
-    return <Router forceRefresh={!'pushState' in window.history}>
+    return (<Router forceRefresh={!'pushState' in window.history}>
+      <div className="App">
+        {this.state.loginPage}
+        {this.state.uploadScreen}
+      </div>
+
+
+
       <div>
         <XNav />
         <Switch>
@@ -33,13 +68,16 @@ class App extends Component {
           <Route exact path='/Login' component={Login} />
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/Client' component={Client} />
-          <Route exact path='/Creator' component={Creator} /> 
+          <Route exact path='/Creator' component={Creator} />
           <Route exact path='/XCollection/:id' component={XCollection} />
           <Route component={XNoMatch} />
         </Switch>
       </div>
     </Router>
+
+    )
   }
+
 };
 
 export default App;
