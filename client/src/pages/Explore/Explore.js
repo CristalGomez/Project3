@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { DefaultButton, XComponentTwo } from '../../components/XComponent'
-
+import { DefaultButton } from '../../components/Button';
+import profiles from './profiles.js';
+import CreatorNav from '../../components/Navbars/CreatorNav';
 class XPageTwo extends Component {
   state = {
-    array: ['X', 'PageTwo', 'Array'],
-    string: 'XPageTwoString',
+    
   };
 
   componentDidMount() {
@@ -17,12 +16,12 @@ class XPageTwo extends Component {
 
   render() {
     return (<div>
-      <Link to={"/"}>
-        <strong>Go to XPageOne</strong>
-      </Link>
-      <DefaultButton array={this.state.array} string={this.state.string} />
-      <XComponentTwo array={this.state.array} string={this.state.string} />
-      EXplore
+      <br></br>
+      <CreatorNav />
+      {profiles.map((profile, i) => (
+      console.log(profiles[i].profile),
+        <DefaultButton {...profile} key = {i} url = {profiles[i].profile} />
+        ))}
     </div>);
   }
 }
