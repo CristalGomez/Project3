@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { DefaultButton, XComponentTwo } from '../../components/XComponent'
 import Card from "../../components/Card/Card"
 import card from "./cards.json"
+import "../../pages/About/About.css"
 
 
 class About extends Component {
@@ -20,8 +21,8 @@ class About extends Component {
   }
 
   render() {
-    return (<div>
-        ABOUT PAGE
+    return (<div className="IMGOutput">
+        
         {this.state.card.map(card => (
           <Card 
           clickCount = {this.clickCount}
