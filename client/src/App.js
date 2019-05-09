@@ -12,7 +12,7 @@ import Creator from './pages/Creator'
 
 import XCollection from './pages/XCollection'
 import XNoMatch from './pages/XNoMatch';
-import XNav from './components/XNav/XNav';
+import WebsiteNav from './components/Navbars/WebsiteNav';
 // import Card from "./components/Card"
 // import cards from "./cards.json"
 
@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return <Router forceRefresh={!'pushState' in window.history}>
       <div>
-        <XNav />
+        <WebsiteNav />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/Explore' component={Explore} />
