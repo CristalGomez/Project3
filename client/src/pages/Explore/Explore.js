@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import { DefaultButton } from '../../components/Button';
 import profiles from './profiles.js';
 import CreatorNav from '../../components/Navbars/CreatorNav';
-class XPageTwo extends Component {
+class Explore extends Component {
   state = {
     
   };
@@ -26,4 +26,4 @@ class XPageTwo extends Component {
   }
 }
 
-export default XPageTwo;
+export default Explore;

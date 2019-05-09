@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card/Card"
-import card from "./cards.json"
 
-
-class About extends Component {
+class SignUp extends Component {
   state = {
-    card,
     array: ['X', 'PageTwo', 'Array'],
     string: 'XPageTwoString',
   };
@@ -20,17 +16,9 @@ class About extends Component {
 
   render() {
     return (<div>
-        ABOUT PAGE
-        {this.state.card.map(card => (
-          <Card 
-          clickCount = {this.clickCount}
-          id = {card.id}
-          key = {card.id}
-          image= {card.image}
-          />
-        ))}
+      SIGNUP PAGE
     </div>);
   }
 }
 
-export default About;
+export default SignUp;
