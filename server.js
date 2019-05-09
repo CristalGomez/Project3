@@ -5,7 +5,6 @@
 // Utilities for working with file and directory paths
 const path = require('path');
 // Load enviroment variables from .env into process.env
-require('dotenv').config()
 
 /* WEB FRAMEWORKS */
 // lightweight web framework for node server
@@ -13,6 +12,8 @@ const express = require('express');
 // Initialize express under app variable
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+
 
 /* MONGODB ORM */
 //  MongoDB object modeling tool
@@ -58,6 +59,26 @@ db.once("open", () => {
 	console.log("DB connection successful!");
 });
 
+
+const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+
+app.use(require("body-parser").text());
+
+
+app.post("/charge", async (req, res) => {
+	try {
+	  let {status} = await stripe.charges.create({
+		amount: 2000,
+		currency: "usd",
+		description: "An example charge",
+		source: req.body
+	  });
+  
+	  res.json({status});
+	} catch (err) {
+	  res.status(500).end();
+	}
+  });
 /*****************|
 |* SET UP ROUTES *| 
 |*****************/

@@ -1,7 +1,7 @@
 {
-  "name": "Project3",
-  "version": "1.0.0",
-  "description": "Group Project 3",
+  "name": "chat-feature",
+  "version": "0.0.1",
+  "description": "chat feature",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,6 +23,8 @@
     "express": "^4.16.4",
     "mongoose": "^5.5.6",
     "morgan": "^1.9.1",
-    "path": "^0.12.7"
-  }
+    "react-stripe-elements": "^3.0.0",
+    "stripe": "^6.34.0"
+  },
+  "devDependencies": {}
 }

@@ -25,20 +25,6 @@ const ourUser = new Schema({
   status: {},
   //the images on their profile
   images: {},
-  //conversations is where our data is duplicated
-  conversations: [
-    {
-      message: {},
-      timestamp: {},
-      //this is a 2 way conversation so it needs to match to the specific user
-      userID: {}
-    }
-  ],
-
-  images: { type: String, required: true },
-  folder: { type: String, required: true},
-
-
 });
 
 /***********|

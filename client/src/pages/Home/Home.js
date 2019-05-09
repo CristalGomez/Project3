@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
-import { XComponentOne, XComponentTwo } from '../../components/XComponent'
+import { DefaultButton, XComponentTwo } from '../../components/XComponent'
 
 class XPage extends Component {
   state = {
@@ -17,11 +17,7 @@ class XPage extends Component {
 
   render() {
     return (<div>
-      <Link to={"/XPageTwo"}>
-        <strong>Go to XPageTwo</strong>
-      </Link>
-      <XComponentOne array={this.state.array} string={this.state.string} />
-      <XComponentTwo array={this.state.array} string={this.state.string} />
+      HOME PAGE
     </div>);
   }
 }

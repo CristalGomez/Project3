@@ -1,24 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import XPage from './pages/XPage';
-import XPageTwo from './pages/XPageTwo'
-import XCollection from './pages/XCollection'
-import XNoMatch from './pages/XNoMatch';
-import { XNav } from './components/XNav';
+import Home from './pages/Home';
+import Explore from './pages/Explore'
+import About from './pages/About'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import Client from './pages/Client'
+import Creator from './pages/Creator'
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from './CheckoutForm';
+
+
 
 class App extends Component {
   render() {
-    return <Router forceRefresh={!'pushState' in window.history}>
-      <div>
-        <XNav />
-        <Switch>
-          <Route exact path='/' component={XPage} />
-          <Route exact path='/XPageTwo' component={XPageTwo} />
-          <Route exact path='/XCollection/:id' component={XCollection} />
-          <Route component={XNoMatch} />
-        </Switch>
-      </div>
-    </Router>
+    return (
+      <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+        <div className="example">
+          <h1>React Stripe Elements Example</h1>
+          <Elements>
+            <CheckoutForm />
+            <About/>
+          </Elements>
+        </div>
+      </StripeProvider>
+    );
   }
 };
 
