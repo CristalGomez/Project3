@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { DefaultButton, XComponentTwo } from '../../components/XComponent'
 import Card from "../../components/Card/Card"
 import card from "./cards.json"
 import "../../pages/About/About.css"
