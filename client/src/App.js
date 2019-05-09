@@ -13,6 +13,8 @@ import Creator from './pages/Creator'
 import XCollection from './pages/XCollection'
 import XNoMatch from './pages/XNoMatch';
 import XNav from './components/XNav/XNav';
+// import Card from "./components/Card"
+// import cards from "./cards.json"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
