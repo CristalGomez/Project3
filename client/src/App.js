@@ -12,20 +12,37 @@ import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
 
 
+import XCollection from './pages/XCollection'
+import XNoMatch from './pages/XNoMatch';
+import WebsiteNav from './components/Navbars/WebsiteNav';
+// import Card from "./components/Card"
+// import cards from "./cards.json"
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStroopwafel)
+
 
 class App extends Component {
   render() {
-    return (
-      <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
-        <div className="example">
-          <h1>React Stripe Elements Example</h1>
-          <Elements>
-            <CheckoutForm />
-            <About/>
-          </Elements>
-        </div>
-      </StripeProvider>
-    );
+    return <Router forceRefresh={!'pushState' in window.history}>
+      <div>
+        <WebsiteNav />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/Explore' component={Explore} />
+          <Route exact path='/About' component={About} />
+          <Route exact path='/Login' component={Login} />
+          <Route exact path='/SignUp' component={SignUp} />
+          <Route exact path='/Client' component={Client} />
+          <Route exact path='/Creator' component={Creator} /> 
+          <Route exact path='/XCollection/:id' component={XCollection} />
+          <Route component={XNoMatch} />
+        </Switch>
+      </div>
+    </Router>
   }
 };
 

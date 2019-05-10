@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { DefaultButton, XComponentTwo } from '../../components/XComponent'
-
+import { DefaultButton } from '../../components/Button';
+import profiles from './profiles.js';
+import CreatorNav from '../../components/Navbars/CreatorNav';
 class Explore extends Component {
   state = {
-    array: ['X', 'PageTwo', 'Array'],
-    string: 'XPageTwoString',
+    
   };
 
   componentDidMount() {
@@ -17,7 +16,12 @@ class Explore extends Component {
 
   render() {
     return (<div>
-      EXPLORE PAGE
+      <br></br>
+      <CreatorNav />
+      {profiles.map((profile, i) => (
+      console.log(profiles[i].profile),
+        <DefaultButton {...profile} key = {i} url = {profiles[i].profile} />
+        ))}
     </div>);
   }
 }
