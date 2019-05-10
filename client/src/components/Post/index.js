@@ -3,38 +3,37 @@
 
 // src/components/Post/index.js
 import React, { Component } from "react";
-import Card from "../../components/Card/Card"
+// import Card from "../../components/Card/Card"
 // import card from "../"
 import "./Post.css"
 class Post extends Component {
     render() {
-        return <article className="Post" ref="Post">
+        return <article className="Post" >
             <header>
                 <div className="Post-user">
                     <div className="Post-user-avatar">
-                        {this.state.card.map(card => (
-                            <Card
-                                clickCount={this.clickCount}
-                                id={card.id}
-                                key={card.id}
-                                image={card.image}
-                            />
-                        ))}
+                        <img alt="Icon Living" src="https://i.imgur.com/sHDSn2Z.jpg" />
                     </div>
                     <div className="Post-user-nickname">
-                        <span>Chris</span>
+                        <span>Skylar Piper</span>
                     </div>
                 </div>
             </header>
             <div className="Post-image">
                 <div className="Post-image-bg">
-                    <img alt="Icon Living" src="https://pbs.twimg.com/media/DOXI0IEXkAAkokm.jpg" />
+                    <img alt="Icon Living" src="https://i.imgur.com/sHDSn2Z.jpg" />
                 </div>
             </div>
             <div className="Post-caption">
-                <strong>Chris</strong> Moving the community!
+                <strong><h3>Skylar Piper</h3></strong>
+                <br></br>
+                About Me
+                <br></br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
-        </article>;
+        </article>
+
+
     }
 }
 export default Post;

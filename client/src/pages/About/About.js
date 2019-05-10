@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card/Card"
-import card from "./cards.json"
+import Card from "../../components/Card/Cards"
+import card from "../../components/Card/card"
 import "../../pages/About/About.css"
 
 

@@ -1,13 +1,20 @@
-import React from "react";
-import "./Card.css";
-console.log(Card)
+const card = [{
+    "id":1,
+    "name": "Skylar",
+    "image":"https://i.imgur.com/sHDSn2Z.jpg",
+    "count": 0
+},
+{
+    "id":2,
+    "name": "Cristal",
+    "image":"https://i.imgur.com/sHDSn2Z.jpg",
+    "count": 0
+},
+{
+    "id":3,
+    "name": "Cristal",
+    "image":"https://i.imgur.com/sHDSn2Z.jpg",
+    "count": 0
+}]
 
-const Card = props => (
-    <div className="card">
-        <div className="img-container">
-            
-            <img alt={props.name} src={props.image} />
-        </div>
-    </div>
-);
-export default Card;
+export default card;
