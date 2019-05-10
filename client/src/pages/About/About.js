@@ -28,6 +28,9 @@ class About extends Component {
           id = {card.id}
           key = {card.id}
           image= {card.image}
+          name= {card.name}
+          about= {card.about}
+          icon= {card.icon}
           />
         ))}
     </div>);

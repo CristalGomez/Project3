@@ -1,5 +1,6 @@
 import React from "react";
-import "./Card.css";
+// import "./Card.css";
+import "../Card/Post.css"
 
 
 const Card = props => (
@@ -7,10 +8,10 @@ const Card = props => (
     <header>
         <div className="Post-user">
             <div className="Post-user-avatar">
-                <img alt="Icon Living" src="https://i.imgur.com/sHDSn2Z.jpg" />
+            <img alt={props.name} src={props.icon} />
             </div>
             <div className="Post-user-nickname">
-                <span>Skylar Piper</span>
+                <span>{props.name}</span>
             </div>
         </div>
     </header>
@@ -20,11 +21,11 @@ const Card = props => (
         </div>
     </div>
     <div className="Post-caption">
-        <strong><h3>Skylar Piper</h3></strong>
+        <strong><h3>{props.name}</h3></strong>
         <br></br>
         About Me
         <br></br>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        <p>{props.about}</p>
     </div>
 </article>
 );
