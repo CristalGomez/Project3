@@ -45,7 +45,7 @@ app.use(logger('dev'));
 |* SET UP DATABASE *| 
 |*******************/
 // Connect to db
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mern-bp-DB";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/iimage";
 mongoose.connect(MONGODB_URI);
 const db = mongoose.connection;
 
@@ -60,32 +60,14 @@ db.once("open", () => {
 });
 
 
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
-app.use(require("body-parser").text());
-
-
-app.post("/charge", async (req, res) => {
-	try {
-	  let {status} = await stripe.charges.create({
-		amount: 2000,
-		currency: "usd",
-		description: "An example charge",
-		source: req.body
-	  });
-  
-	  res.json({status});
-	} catch (err) {
-	  res.status(500).end();
-	}
-  });
 /*****************|
 |* SET UP ROUTES *| 
 |*****************/
 // Setup app to serve static files from React App depending on dev/prod
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, './client', 'build')));
-}
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
+  }
 // imports in ./routes/index.js (contains API and VIEW routes);
 // const routes = require("./routes");
 // // Sets express to use routes
