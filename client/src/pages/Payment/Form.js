@@ -14,7 +14,16 @@ class Form extends React.Components<IFormProps, IFormState> {
     handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) =>{
         e.preventDefault();
         try {
-            let token = await.this.props.stripe.createToken({name: this.state.name})
+            let {token} = await.this.props.stripe.createToken({name: this.state.name})
+            let amount = this.state.amount;
+            await fetch('/api/donate', {
+                method: 'POST',
+                header: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ token, amount })
+            })
+            //redirect, clear input, thank you alert
             console.log(token)
         } catch(error){
             throw error

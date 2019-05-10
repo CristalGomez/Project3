@@ -5,6 +5,8 @@
 // Utilities for working with file and directory paths
 const path = require('path');
 // Load enviroment variables from .env into process.env
+require('dotenv').config()
+
 
 /* WEB FRAMEWORKS */
 // lightweight web framework for node server
@@ -12,8 +14,6 @@ const express = require('express');
 // Initialize express under app variable
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-
 
 /* MONGODB ORM */
 //  MongoDB object modeling tool
@@ -45,7 +45,7 @@ app.use(logger('dev'));
 |* SET UP DATABASE *| 
 |*******************/
 // Connect to db
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/iimage";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mern-bp-DB";
 mongoose.connect(MONGODB_URI);
 const db = mongoose.connection;
 
@@ -59,19 +59,18 @@ db.once("open", () => {
 	console.log("DB connection successful!");
 });
 
-
-
 /*****************|
 |* SET UP ROUTES *| 
 |*****************/
 // Setup app to serve static files from React App depending on dev/prod
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static("client/build"));
-  }
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, './client', 'build')));
+}
 // imports in ./routes/index.js (contains API and VIEW routes);
-// const routes = require("./routes");
-// // Sets express to use routes
-// app.use(routes);
+const routes = require("./routes");
+// Sets express to use routes
+app.use(routes);
+app.use(express.json())
 
 /*********************************|
 |* LISTEN FOR CONNECTION ON PORT *| 
