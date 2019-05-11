@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 
 // Create Schema for collectionNameSchema
 const ourUser = new Schema({
-    id: '',
     name: 
     {
        type: String 
@@ -13,10 +12,7 @@ const ourUser = new Schema({
     email: {
         type: String
     },
-    images: [
-        '',
-        '',
-    ],
+    images: [{ type: Schema.Types.ObjectId, ref: "images" }],
     folders: [
         '',
         '',
