@@ -1,0 +1,13 @@
+.LogForm{
+    float: right;
+    margin-top: 14%;
+    /* background-color: aqua; */
+}
+
+@media only screen and (max-width: 600px) {
+    .LogForm{
+        float: right;
+        margin-top: 50%;
+        /* background-color; */
+    }
+}

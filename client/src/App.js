@@ -1,6 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import Post from './components/Post/index'
 import Home from './pages/Home';
 import Explore from './pages/Explore'
 import About from './pages/About'
@@ -35,6 +36,7 @@ class App extends Component {
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/Client' component={Client} />
           <Route exact path='/Creator' component={Creator} /> 
+          {/* <Route exact path='/Post' component={Post} />  */}
         </Switch>
       </div>
     </Router>
