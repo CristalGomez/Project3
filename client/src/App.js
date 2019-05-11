@@ -9,11 +9,8 @@ import SignUp from './pages/SignUp'
 import Client from './pages/Client'
 import Creator from './pages/Creator'
 import {Elements, StripeProvider} from 'react-stripe-elements';
-import CheckoutForm from './CheckoutForm';
 
 
-import XCollection from './pages/XCollection'
-import XNoMatch from './pages/XNoMatch';
 import WebsiteNav from './components/Navbars/WebsiteNav';
 // import Card from "./components/Card"
 // import cards from "./cards.json"
@@ -38,8 +35,6 @@ class App extends Component {
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/Client' component={Client} />
           <Route exact path='/Creator' component={Creator} /> 
-          <Route exact path='/XCollection/:id' component={XCollection} />
-          <Route component={XNoMatch} />
         </Switch>
       </div>
     </Router>
