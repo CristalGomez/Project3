@@ -1,29 +1,24 @@
+
 {
-  "name": "chat-feature",
-  "version": "0.0.1",
-  "description": "chat feature",
+  "name": "mern-bp",
+  "version": "1.0.0",
+  "description": "Mern Boiler Plate",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CristalGomez/Project3.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CristalGomez/Project3/issues"
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.3"
   },
-  "homepage": "https://github.com/CristalGomez/Project3#readme",
   "dependencies": {
     "@types/react-stripe-elements": "^1.1.10",
     "@types/stripe": "^6.25.15",
@@ -51,9 +46,5 @@
     "npm": "^6.9.0",
     "reactstrap": "^8.0.0",
     "request": "^2.88.0"
-  },
-  "devDependencies": {
-    "concurrently": "^4.0.1",
-    "nodemon": "^1.18.3"
   }
 }
