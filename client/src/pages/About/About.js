@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card/Card"
-import card from "./cards.json"
+import Card from "../../components/Card/Cards"
+import card from "../../components/Card/card"
+import "../../pages/About/About.css"
 
 
 class About extends Component {
@@ -19,14 +20,17 @@ class About extends Component {
   }
 
   render() {
-    return (<div>
-        ABOUT PAGE
+    return (<div className="IMGOutput">
+        
         {this.state.card.map(card => (
           <Card 
           clickCount = {this.clickCount}
           id = {card.id}
           key = {card.id}
           image= {card.image}
+          name= {card.name}
+          about= {card.about}
+          icon= {card.icon}
           />
         ))}
     </div>);
