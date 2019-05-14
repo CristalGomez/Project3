@@ -45,4 +45,3 @@ router
 	.get(usersController.findAll);
 
 module.exports = router;
-
