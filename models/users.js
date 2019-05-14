@@ -4,84 +4,83 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema for collectionNameSchema
-const ourUser = new Schema({
-    name: 
-    {
-       type: String 
-    },
-    email: {
-        type: String
-    },
-    images: [{ type: Schema.Types.ObjectId, ref: "images" }],
-    folders: [
-        '',
-        '',
-        '',
-    ]
+const Profile = new Schema({
+        firstName: {type: String},
+        lastName: {type: String},
+        bio: {type: String},
+        skill: {type: String, default: false, required: true },
+
+    
+
+    // images: [{ type: Schema.Types.UserId, ref: "images" }],
+    folders: [{
+        type: Schema.Types.ObjectId, ref: 'Folder'
+    }]
+
 
 });
 
 
-module.exports = mongoose.model("users", ourUser);
+module.exports = mongoose.model("Profile", Profile);
 
 
 
 
-users [
-  {
-      id: 'user1',
-      name: 'k',
-      email: 'k',
-      images: [
-      'img1',
-      '565656767567',
-      'tfftfyttyfft'
-      ]
-  }
+// users [
+//   {
+//       id: 'user1',
+//       name: 'k',
+//       email: 'k',
+//       images: [
+//       'img1',
+//       '565656767567',
+//       'tfftfyttyfft'
+//       ]
+//   }
 
-]
+// ]
 
-images [
-  {
-      id: 'img1',
-      title: "title",
-      link: " www.www.",
-      userID: "user1"
-  },
-  {
-      id: '3434545354354',
-      title: "title",
-      link: " www.www.",
-      userID: "12321332121"
-  },
-  {
-      id: '3434545354354',
-      title: "title",
-      link: " www.www.",
-      userID: "12321332121"
-  },
-  {
-      id: '3434545354354',
-      title: "title",
-      link: " www.www.",
-      userID: "12321332121"
-  },
-  {
-      id: '3434545354354',
-      title: "title",
-      link: " www.www.",
-      userID: "12321332121"
-  },
-  {
-      id: '3434545354354',
-      title: "title",
-      link: " www.www.",
-      userID: "12321332121"
-  },
-  {
-      id: '3434545354354',
-      title: "title",
-      link: " www.www.",
-      userID: "12321332121"
-  },
-]
+// images [
+//   {
+//       id: 'img1',
+//       title: "title",
+//       link: " www.www.",
+//       userID: "user1"
+//   },
+//   {
+//       id: '3434545354354',
+//       title: "title",
+//       link: " www.www.",
+//       userID: "12321332121"
+//   },
+//   {
+//       id: '3434545354354',
+//       title: "title",
+//       link: " www.www.",
+//       userID: "12321332121"
+//   },
+//   {
+//       id: '3434545354354',
+//       title: "title",
+//       link: " www.www.",
+//       userID: "12321332121"
+//   },
+//   {
+//       id: '3434545354354',
+//       title: "title",
+//       link: " www.www.",
+//       userID: "12321332121"
+//   },
+//   {
+//       id: '3434545354354',
+//       title: "title",
+//       link: " www.www.",
+//       userID: "12321332121"
+//   },
+//   {
+//       id: '3434545354354',
+//       title: "title",
+//       link: " www.www.",
+//       userID: "12321332121"
+//   },
+// ]

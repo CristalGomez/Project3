@@ -4,18 +4,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema for collectionNameSchema
-const images = new Schema({
-    images: [
+const Images = new Schema({
+    Images: [
         {
-            id: '',
-            title: '',
-            link: '',
-            userId: '',
+            title: {type: String},
+            link: {type: String},
+            
         }
     ]
 });
 
 
-module.exports = mongoose.model("images", images);
+module.exports = mongoose.model("Images", Images);
 
 

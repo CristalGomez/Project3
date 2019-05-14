@@ -29,3 +29,20 @@ router.use('/images', imagesRoutes);
 |***********/
 // Export instance of express router which contains API routes
 module.exports = router;
+
+
+const path = require('path');
+const router = require('express').Router();
+const usersRoutes = require('./usersAPI');
+const foldersRoutes = require('./foldersRoutes');
+const imagesRoutes = require('./imagesRoutes');
+
+router.use('/users', usersRoutes);
+router.use('/folders', foldersRoutes);
+router.use('/images', imagesRoutes);
+
+router.use(function(req, res){
+    res.sendFile(path.join(__dirname, "../../client/build/index.html"))
+})
+
+module.exports = router;

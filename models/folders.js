@@ -4,20 +4,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema for collectionNameSchema
-const folders = new Schema({
-    folders: {
+const Folder = new Schema({
+    Folder: {
         name: {
             type: String
         },
         userID: '',
-        imageID: [
-            {
-
-            }
-        ]
+        images: [{ type: Schema.Types.ObjectId, ref: "Images" }],
     }
 
 });
 
 
-module.exports = mongoose.model("folders", folders);
+module.exports = mongoose.model("Folder", Folder);
