@@ -2,8 +2,9 @@
 
     .Post {
       border-radius: 3px;
+      box-shadow: 10px 10px 10px grey;
       border: 1px solid gray;
-      background-color: blanchedalmond;
+      background-color: #2bbbad;
       /* border: 1px solid #e6e6e6;
         background-color: #fff; */
       margin-top: 3%;

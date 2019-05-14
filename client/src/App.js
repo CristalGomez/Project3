@@ -9,7 +9,7 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Client from './pages/Client'
 import Creator from './pages/Creator'
-
+import Anime from 'react-anime'
 
 import XCollection from './pages/XCollection'
 import XNoMatch from './pages/XNoMatch';
@@ -28,7 +28,10 @@ class App extends Component {
   render() {
     return <Router forceRefresh={!'pushState' in window.history}>
       <div>
+        <Anime>
         <WebsiteNav />
+        </Anime>
+        
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/Explore' component={Explore} />
