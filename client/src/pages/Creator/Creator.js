@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import ImageUpload from '../../components/ImageUpload'
+import ImageUpload from '../../components/ImageUpload/ImageUpload'
 
 class Creator extends Component {
   state = {

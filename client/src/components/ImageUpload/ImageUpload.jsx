@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import {storage} from "../firebase"
+import {storage} from "../../firebase"
 
 class ImageUpload extends Component {
     constructor(props) {
         super(props);
         this.state = {
             image: null,
-            url: ''
+            url: '',
+            progress:0,
         }
         this.handleChange = this
         .handleChange
@@ -25,6 +26,8 @@ class ImageUpload extends Component {
         uploadTask.on('state_changed',
         (snapshot) => {
             // progress function
+            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+            this.setState({progress})
         },
         (error)=> {
             // error function
@@ -34,6 +37,7 @@ class ImageUpload extends Component {
             // complete function
             storage.ref('images').child(image.name).getDownloadURL().then(url => {
                 console.log(url);
+                this.setState({url});
             })
         });
     }
@@ -44,8 +48,12 @@ class ImageUpload extends Component {
 
             // }
             <div>
+            <progress value={this.state.progress} max='100'/>
+            <br/>
                 <input type='file' onChange={this.handleChange} />
                 <button onClick={this.handleUpload}>Upload</button>
+                <br/>
+                <img src={this.state.url || 'https://via.placeholder.com/300x150' } alt='uploaded images' height='300' width='400'/>
             </div>
         )
     }
