@@ -8,8 +8,8 @@ const User = new Schema({
     firstName: { type: String },
     lastName: { type: String },
     bio: { type: String },
-    skill: { type: String, default: false, required: true },
-    pImage: {type: String, required: true},
+    skill: { type: String, default: false },
+    pImage: {type: String},
 
     // images: [{ type: Schema.Types.UserId, ref: "images" }],
     folders: [{

@@ -3,7 +3,7 @@ const db = require('../models');
 
 module.exports = {
     findAll: function(req, res){
-        db.Folder.find(req.query)
+        db.Folder.find(req.params)
         .then(dbFolder => releaseEvents.json(dbFolder))
         .catch(err => res.status(422).json(err))
     },

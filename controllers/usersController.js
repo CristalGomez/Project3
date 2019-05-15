@@ -4,9 +4,8 @@ const db = require('../models');
 
 module.exports = {
     findAll: function(req, res){
-        console.log('line 7', req.params)
         db.User.find({})
-        .then(dbUsers => {console.log('line 9', dbUsers)
+        .then(dbUsers => {console.log(dbUsers)
     return res.json(dbUsers)
     })
         .catch(err => res.status(422).json(err))

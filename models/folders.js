@@ -9,7 +9,7 @@ const Folder = new Schema({
         name: {
             type: String
         },
-        userID: '',
+        userID: {type: String},
         images: [{ type: Schema.Types.ObjectId, ref: "Images" }],
     }
 

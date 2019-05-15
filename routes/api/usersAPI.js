@@ -13,8 +13,8 @@ const usersController = require('../../controllers/usersController.js');
 
 // Matches with '/api/users' this is defined in '../index.js'
 router.route('/')
-	.get(usersController.findAll)
-	.post(usersController.create); 
+.get(usersController.findAll)
+.post(usersController.create); 
 
 router.route('/:id')
 .get(usersController.findById)
