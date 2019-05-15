@@ -47,7 +47,9 @@ class Login extends Component {
             </form>
           </MDBCol>
         </MDBRow>
+        <div className="SignUpLink"><a href="/SignUp">Don't have an account? Sign up!</a></div>
       </MDBContainer>
+
 
 
 

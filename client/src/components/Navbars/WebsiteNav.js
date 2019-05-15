@@ -14,6 +14,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -46,25 +47,7 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink href="/About"><span className="navSpan">About</span></NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                
-                <span className="navSpan">Login | Sign Up</span>
-                  
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem href="/Login">
-                    Login
-                  </DropdownItem>
-                  <DropdownItem href="/SignUp">
-                    Sign Up
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    IDK what to put here yet
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <MDBBtn href="/Login">Login</MDBBtn>
             </Nav>
           </Collapse>
         </Navbar>

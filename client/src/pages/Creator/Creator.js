@@ -9,6 +9,10 @@ class Creator extends Component {
     string: 'XPageTwoString',
   };
 
+  fileSelectedHandler = event => {
+    console.log(event.target);
+  }
+
   componentDidMount() {
     API.getDocuments()
       .then((res) => { console.log(res.data) })
@@ -18,6 +22,7 @@ class Creator extends Component {
   render() {
     return (<div>
         <h1>Creator Profile Page</h1>
+        
     </div>);
   }
 }
