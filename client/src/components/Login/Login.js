@@ -1,6 +1,35 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { App, facebookProvider } from '../App'
+import { App } from '../App'
+
+
+//mine;
+const loginStyles = {
+  width: "90%",
+  maxWidth: "315px",
+  margin: "20px auto",
+  border: "1px solid #ddd",
+  borderRadius: "5px",
+  padding: "10px"
+}
+
+class Login extends Component {
+  render(){
+    return {
+      <div style={loginStyles>
+      <h3>Email</h3>
+      <input style={{width: "100%"}} className="input-email" name="email" type="email" ref={(input) => {this.emailInput = input}} placeholder="Email"></input>
+
+      <h3>Password</h3>
+      <input style={{width: "100%"}} className="input-password" name="password" type="password" ref={(input) => {this.passwordInput = input}} placeholder="Password"></input>
+      </div>
+
+    }
+  }
+}
+
+
+//theirs:
 
 const loginStyles = {
   width: "90%",
