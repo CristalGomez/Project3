@@ -1,10 +1,12 @@
-.something {
+.item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 }
 
 .circle {
   height: 150px;
   border-radius: 50%;
+  width : 100%;
 }

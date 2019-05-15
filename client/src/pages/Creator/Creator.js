@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { DefaultButton } from '../../components/Button';
+import { Image } from '../../components/Image/Image';
 import { TextBox } from '../../components/TextBox/TextBox'
 import categories from './categories';
 import './Creator.css';
@@ -27,7 +27,7 @@ class Creator extends Component {
       <div className = "grid">
         {categories.map((category, i) => (
           console.log(categories[i].category),
-          <DefaultButton {...category} key = {i} url = {categories[i].image} text = {categories[i].category} />
+          <Image {...category} key = {i} url = {categories[i].image} text = {categories[i].category} />
           ))}
           </div> 
     </div>);
