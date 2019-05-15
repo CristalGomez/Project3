@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './WebsiteNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -52,6 +53,7 @@ export default class Example extends React.Component {
                   <DropdownItem href="/Login">
                     Login
                   </DropdownItem>
+
                   <DropdownItem href="/SignUp">
                     Sign Up
                   </DropdownItem>
