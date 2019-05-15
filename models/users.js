@@ -4,24 +4,21 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema for collectionNameSchema
-const Profile = new Schema({
-        firstName: {type: String},
-        lastName: {type: String},
-        bio: {type: String},
-        skill: {type: String, default: false, required: true },
-
-    
+const User = new Schema({
+    firstName: { type: String },
+    lastName: { type: String },
+    bio: { type: String },
+    skill: { type: String, default: false, required: true },
 
     // images: [{ type: Schema.Types.UserId, ref: "images" }],
     folders: [{
         type: Schema.Types.ObjectId, ref: 'Folder'
     }]
 
-
 });
 
 
-module.exports = mongoose.model("Profile", Profile);
+module.exports = mongoose.model("User", User);
 
 
 
