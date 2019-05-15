@@ -9,22 +9,18 @@ const router = require('express').Router();
 |*  SETS UP API ROUTES FOR FOLDERS *|
 |************************************/
 // Imports in controller for folders
-const foldersController = require('../../controllers/foldersController.js');
+const foldersController = require('../../controllers/foldersController');
 
 // Matches with '/api/folders' this is defined in '../index.js'
 router.route('/')
-	.get(foldersController.findSomeRegexPop)
-	.post(foldersController.create);
+	.get(foldersController.findAll)
+	.post(foldersController.create); 
 
-// Matches with '/api/folders/:id' this is defined in '../index.js'
-// router.route('/:id')
-// .get(foldersController.findById)
-// .put(foldersController.update)
-// .delete(foldersController.remove);
+router.route('/:id')
+.get(foldersController.findById)
+.put(foldersController.update)
+.delete(foldersController.remove)
 
-router.route('/idtwo/:id')
-	.get(foldersController.findByIdTwoPop)
-	.put(foldersController.updateByIdTwo);
 
 /***********|
 |* EXPORTS *| 
