@@ -1,7 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import Post from './components/Post/index'
 import Home from './pages/Home';
 import Explore from './pages/Explore'
 import About from './pages/About'
@@ -9,7 +8,9 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Client from './pages/Client'
 import Creator from './pages/Creator'
-import {Elements, StripeProvider} from 'react-stripe-elements';
+import Anime from 'react-anime'
+// import XCollection from './pages/XCollection';
+import XNoMatch from './pages/XNoMatch';
 
 
 import WebsiteNav from './components/Navbars/WebsiteNav';
@@ -27,7 +28,10 @@ class App extends Component {
   render() {
     return <Router forceRefresh={!'pushState' in window.history}>
       <div>
+        <Anime>
         <WebsiteNav />
+        </Anime>
+        
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/Explore' component={Explore} />
@@ -35,8 +39,10 @@ class App extends Component {
           <Route exact path='/Login' component={Login} />
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/Client' component={Client} />
-          <Route exact path='/Creator' component={Creator} /> 
-          {/* <Route exact path='/Post' component={Post} />  */}
+          <Route exact path='/Creator' component={Creator} />
+
+          {/* <Route exact path='/XCollection/:id' component={XCollection} /> */}
+          <Route component={XNoMatch} />
         </Switch>
       </div>
     </Router>

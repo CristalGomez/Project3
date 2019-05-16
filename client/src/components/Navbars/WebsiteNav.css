@@ -20,4 +20,18 @@ LoginButton {
   marginRight: 20,
 } */ 
 
+.NavBarEdit{
+  background-color: #2bbbad;
 
+}
+
+
+.navSpan{
+  color: aliceblue;
+}
+span:hover{
+  color:  orange;
+}
+span:active{
+  color:blue;
+}

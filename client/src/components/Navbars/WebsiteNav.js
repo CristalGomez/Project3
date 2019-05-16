@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Router, Link} from 'react-router-dom';
 import './WebsiteNav.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // import React from 'react';
+
 import {
   Collapse,
   Navbar,
@@ -15,7 +17,9 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem
+} from 'reactstrap';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -23,7 +27,8 @@ export default class Example extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      profile : this.clicked
     };
   }
   toggle() {
@@ -31,38 +36,24 @@ export default class Example extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  render() {
+  render(props) {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar  className="NavBarEdit" light expand="md">
           <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/Explore">Explore</NavLink>
+            <Nav pills className="ml-auto" navbar>
+              <NavItem className="navItem">
+                <NavLink className="NavItem" href="/" ><span className="navSpan">Home</span></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/About">About</NavLink>
+                <NavLink className="Nv" href="/Explore" ><span className="navSpan">Explore</span></NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Login | Sign Up
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem href="/Login">
-                    Login
-                  </DropdownItem>
-
-                  <DropdownItem href="/SignUp">
-                    Sign Up
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    IDK what to put here yet
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="/About"><span className="navSpan">About</span></NavLink>
+              </NavItem>
+              <MDBBtn href="/Login">Login</MDBBtn>
             </Nav>
           </Collapse>
         </Navbar>
@@ -70,6 +61,13 @@ export default class Example extends React.Component {
     );
   }
 }
+
+
+
+
+
+
+
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
