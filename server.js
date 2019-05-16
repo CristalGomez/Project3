@@ -56,8 +56,11 @@ db.on("error", (error) => {
 
 // Logs success if sucessfully connected to db
 db.once("open", () => {
-	console.log("DB connection successful!");
-});
+	require('./scripts/userSeed.js')
+	console.log("DB connection successful!")
+	// require('./scripts/folderSeed.js')
+	// require('./scripts/imageSeed.js')  
+  });
 
 /*****************|
 |* SET UP ROUTES *| 

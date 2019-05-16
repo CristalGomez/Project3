@@ -1,6 +1,6 @@
 module.exports = {
   User: require("./users.js"),
-  Folders: require('./folders.js'),
-  Images: require('./images.js'),
-  signUps: require('./signUp.js')
+  Folder: require('./folders.js'),
+  Image: require('./images.js'),
+  signUp: require('./signUp.js')
 };

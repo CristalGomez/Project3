@@ -9,7 +9,7 @@ import SignUp from './pages/SignUp'
 import Client from './pages/Client'
 import Creator from './pages/Creator'
 import Anime from 'react-anime'
-// import XCollection from './pages/XCollection';
+import XCollection from './pages/XCollection';
 import XNoMatch from './pages/XNoMatch';
 
 
@@ -41,7 +41,7 @@ class App extends Component {
           <Route exact path='/Client' component={Client} />
           <Route exact path='/Creator' component={Creator} />
 
-          {/* <Route exact path='/XCollection/:id' component={XCollection} /> */}
+          <Route exact path='/XCollection/:id' component={XCollection} />
           <Route component={XNoMatch} />
         </Switch>
       </div>
