@@ -20,7 +20,7 @@ class Login extends Component {
     return (<div>
       <MDBContainer className="LogForm">
         <MDBRow>
-          <MDBCol md="6">
+          <MDBCol className="ActForm" md="6">
             <form>
               <p className="h5 text-center mb-4">Sign in</p>
               <div className="grey-text">
@@ -47,7 +47,9 @@ class Login extends Component {
             </form>
           </MDBCol>
         </MDBRow>
+        <div className="SignUpLink"><a href="/SignUp">Don't have an account? Sign up!</a></div>
       </MDBContainer>
+
 
 
 

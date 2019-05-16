@@ -61,7 +61,7 @@ class SignUp extends Component {
               />
             </div>
             <div className="text-center">
-              <MDBBtn color="primary">Register</MDBBtn>
+              <MDBBtn>Register</MDBBtn>
             </div>
           </form>
         </MDBCol>
