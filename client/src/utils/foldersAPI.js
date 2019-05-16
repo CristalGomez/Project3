@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export default {
-    getAllFolders: function (params) {
-        return axios.get('/api/students/', { params })
+    getAllFolders: function () {
+        return axios.get('/api/folders/')
         //params because this folder is a child of the users id
     },
     getFolderById: function (id) {
