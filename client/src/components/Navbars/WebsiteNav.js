@@ -1,6 +1,7 @@
 import React from 'react';
+import {Router, Link} from 'react-router-dom';
 import './WebsiteNav.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // import React from 'react';
 import {
@@ -22,7 +23,8 @@ export default class Example extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      profile : this.clicked
     };
   }
   toggle() {
@@ -30,7 +32,7 @@ export default class Example extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  render() {
+  render(props) {
     return (
       <div>
         <Navbar color="light" light expand="md">

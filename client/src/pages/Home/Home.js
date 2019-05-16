@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
-import { DefaultButton, XComponentTwo } from '../../components/Button'
+import { Image } from '../../components/Image'
 
 class XPage extends Component {
   state = {
@@ -17,9 +17,9 @@ class XPage extends Component {
 
   render() {
     return (<div>
-      <DefaultButton  />
-      <DefaultButton  />
-      <DefaultButton  />
+      <Image  />
+      <Image  />
+      <Image  />
       {/* <XComponentTwo array={this.state.array} string={this.state.string} /> */}
       <p>Lorem ipsum.....</p>
     </div>);
