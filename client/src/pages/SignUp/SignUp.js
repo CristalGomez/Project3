@@ -76,3 +76,43 @@ class SignUp extends Component {
 }
 
 export default SignUp;
+
+
+//mine
+
+import React, { Component } from 'react';
+
+class SignUp extends Component {
+
+  state={
+    currentUserName: '',
+    currentUserEmail: ''
+  }
+
+  componentDidMount(){
+    //parse it so you can grab the values using . notation
+    const idToken = JSON.parse(localStorage.getItem('okta-token-storage'));
+
+    this.setState({
+      currentUserEmail: idToken.idToken.claims.currentUserEmail,
+      currentUserName: idToken.idToken.claims.name
+    })
+  }
+
+  render(){
+    console.log(this.state)
+    //should get currentUserEmail & currentUserName
+
+    const { currentUserEmail, currentUserName } = this.state;
+    return (
+      //inside the div grab elements from profile page & paste the user's name on to the name part of the profile page
+      <div>
+        <p>{ currentUserName }</p>
+        {/* <p>{ skill } </p> */}
+      </div>
+
+    )
+  }
+}
+
+export default SignUp;
