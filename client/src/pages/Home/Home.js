@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
-import { DefaultButton, XComponentTwo } from '../../components/Button'
+import { Image } from '../../components/Image'
 
 import {
   Carousel,
@@ -81,6 +81,7 @@ class XPage extends Component {
   
 
   render() {
+
     const { activeIndex } = this.state;
 
     const slides = items.map((item) => {
@@ -108,6 +109,7 @@ class XPage extends Component {
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
       </Carousel>
     );
+
   }
 }
 

@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
+
 import ImageUpload from '../../components/ImageUpload/ImageUpload'
+
+import { Image } from '../../components/Image/Image';
+
+import categories from './categories';
+import './Creator.css';
+
 
 class Creator extends Component {
   state = {
@@ -20,9 +27,21 @@ class Creator extends Component {
   }
 
   render() {
+
     return (<div>
         <h1>Creator Profile Page</h1>
         <ImageUpload/>
+
+    return (
+    <div>
+      <h1>Creator Profile Page</h1>
+      <div className = "grid">
+        {categories.map((category, i) => (
+          console.log(categories[i].category),
+          <Image {...category} key = {i} url = {categories[i].image} text = {categories[i].category} />
+          ))}
+          </div> 
+
     </div>);
   }
 }
