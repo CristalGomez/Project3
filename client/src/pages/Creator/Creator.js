@@ -19,11 +19,13 @@ class Creator extends Component {
       .catch((err) => console.log(err));
   }
 
-  render() {
+  render(props) {
     return (
     <div>
       <h1>Creator Profile Page</h1>
-      <TextBox />
+      <div>
+       
+      </div>
       <div className = "grid">
         {categories.map((category, i) => (
           console.log(categories[i].category),

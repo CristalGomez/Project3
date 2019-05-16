@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 const Image = (props) => {
   return (
     <div className = "item">  
-      <Link to='/Creator'><img className="circle"  src={props.url}/></Link>
+      <Link to='/Creator' state={{"image": 'test'}}><img className="circle"  src={props.url}/></Link>
       <p>{props.text}</p>
     </div>
  );
