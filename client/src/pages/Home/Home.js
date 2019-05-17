@@ -33,18 +33,9 @@ const items = [
     caption: 'Slide 3'
   }
 ];
-class XPage extends Component {
-  state = {
-    array: ['X', 'Page', 'Array'],
-    string: 'XPageString',
-  };
 
-  componentDidMount() {
-    folderApi.getAllFolders()
-      .then((res) => { console.log(res.data) })
-      .catch((err) => console.log(err));
-  }
 
+export default withAuth(class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
@@ -54,6 +45,40 @@ class XPage extends Component {
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
   }
+
+  state = {
+    array: ['X', 'Page', 'Array'],
+    string: 'XPageString',
+    authenticated: null
+  };
+
+  checkAuthentication = async () => {
+    const authenticated = await this.props.auth.isAuthenticated();
+    if (authenticated !== this.state.auth) {
+      this.setState({ authenticated })
+    }
+  }
+
+  async componentDidMount() {
+    this.checkAuthentication()
+
+    folderApi.getAllFolders()
+      .then((res) => { console.log(res.data) })
+      .catch((err) => console.log(err));
+  }
+
+  async componentDidUpdate() {
+    this.checkAuthentication()
+  }
+
+  login = async () => {
+    this.props.auth.login('/')
+  }
+
+  logout = async () => {
+    this.props.auth.logout('/')
+  }
+
 
   onExiting() {
     this.animating = true;
@@ -79,7 +104,7 @@ class XPage extends Component {
     if (this.animating) return;
     this.setState({ activeIndex: newIndex });
   }
-  
+
 
   render() {
 
@@ -92,11 +117,28 @@ class XPage extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} alt={item.altText} style={{width: '100%'}}  />
+          <img src={item.src} alt={item.altText} style={{ width: '100%' }} />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
     });
+
+    if (this.state.authenticated === null) return null;
+
+    const button = this.state.authenticated ? (
+      //displayed in the Navbar of profile page
+      <div>
+
+        <button className="logout-btn" onClick={this.logout}> Logout</button>
+      </div>
+    ) : (
+        <div>
+          <p>Login</p>
+          <button className="login-btn" onClick={this.login}>Login</button>
+        </div>
+      )
+//call the {button} on line 153 on nav
+
 
     return (
       <Carousel
@@ -108,64 +150,13 @@ class XPage extends Component {
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        {button}
       </Carousel>
-
     );
 
   }
-}
-
-export default XPage;
-
-
-export default withAuth(class Home extends Component {
-  state = { authenticated: null};
-
-  checkAuthentication = async () => {
-      const authenticated = await this.props.auth.isAuthenticated();
-      if(authenticated !== this.state.auth){
-          this.setState({ authenticated})
-      }
-  }
-
-  async componentDidMount(){
-      this.checkAuthentication()
-  }
-
-  async componentDidUpdate(){
-      this.checkAuthentication()
-  }
-
-  login = async () => {
-      this.props.auth.login('/')
-  }
-
-  logout = async () => {
-      this.props.auth.logout('/')
-  }
-
-  render(){
-      if (this.state.authenticated === null) return null;
-
-      const button = this.state.authenticated ? (
-          //displayed in the Navbar of profile page
-          <div>
-          
-              <button className="logout-btn" onClick={this.logout}> Logout</button>
-          </div>
-      ) : (
-          <div>
-              <p>Login</p>
-              <button className="login-btn" onClick={this.login}>Login</button>
-          </div>
-      )
-
-
-      return (
-          <div className="profileNav">
-              <Nav />
-              {button}
-          </div>
-      )
-  }
 })
+
+
+//not sure what XPage is..
+// export default XPage;
