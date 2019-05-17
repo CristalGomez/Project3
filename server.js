@@ -7,6 +7,30 @@ const path = require('path');
 // Load enviroment variables from .env into process.env
 // require('dotenv').config()
 
+//sendgrid setup
+const cors = require('cors');
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+app.use(cors());
+
+app.get('/send-email', (req,res) => {
+	//get variables from query string
+	const { recipient, sender, topic, text } = req.query;
+
+	//sendgrid requirements
+	const msg = {
+		to: recipient,
+		from: sender,
+		subject: topic,
+		text: text
+	}
+	//send email
+
+	sgMail.send(msg)
+	.then((msg) => console.log(text))
+})
+
+
 
 /* WEB FRAMEWORKS */
 // lightweight web framework for node server
