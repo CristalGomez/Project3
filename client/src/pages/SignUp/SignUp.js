@@ -88,7 +88,9 @@ class SignUp extends Component {
                   type="password"
                   validate
                   value={this.state.value}
+                  
                 />
+        
               </div>
               <div className="text-center">
                 <MDBBtn type="submit" value="submit">Register</MDBBtn>
