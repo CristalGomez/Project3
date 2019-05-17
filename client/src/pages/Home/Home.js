@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
 import { DefaultButton, XComponentTwo } from '../../components/Button'
+// import Carousel from 'react-bootstrap/Carousel'
+// import { Container } from 'mdbreact';
+import { Container, Row, Col } from 'reactstrap';
+import CarouselHome from "../../components/Carousel/Carousel"
+import "./Home.css"
+import { FaImages } from "react-icons/fa";
+// import { HelloWorld } from 'component-template';
 
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Carousel,
   CarouselItem,
@@ -10,104 +20,42 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
+import { checkPropTypes } from 'prop-types';
 // import anime from 'lib/anime.es.js';
 // import posed from 'react-pose';
 
 
 
-const items = [
-  {
-    src: 'https://files.slack.com/files-pri/TDV67LNC8-FJG4HPL9X/nature-001.jpg',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    src: 'https://i.pinimg.com/originals/f4/a2/1f/f4a21f9e901410cfe15cfa3c49652fd4.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  },
-  {
-    src: 'https://t3.ftcdn.net/jpg/00/98/03/84/240_F_98038403_WTwloHrzmgptZgnJz59e17iZTdntCELY.jpg',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
-  }
-];
+
 class XPage extends Component {
-  state = {
-    array: ['X', 'Page', 'Array'],
-    string: 'XPageString',
-  };
 
-  componentDidMount() {
-    API.getDocuments()
-      .then((res) => { console.log(res.data) })
-      .catch((err) => console.log(err));
-  }
 
-  constructor(props) {
-    super(props);
-    this.state = { activeIndex: 0 };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-    this.goToIndex = this.goToIndex.bind(this);
-    this.onExiting = this.onExiting.bind(this);
-    this.onExited = this.onExited.bind(this);
-  }
-
-  onExiting() {
-    this.animating = true;
-  }
-
-  onExited() {
-    this.animating = false;
-  }
-
-  next() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  previous() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  goToIndex(newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-  }
-  
 
   render() {
-    const { activeIndex } = this.state;
-
-    const slides = items.map((item) => {
-      return (
-        <CarouselItem
-          onExiting={this.onExiting}
-          onExited={this.onExited}
-          key={item.src}
-        >
-          <img src={item.src} alt={item.altText} style={{width: '100%'}}  />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-        </CarouselItem>
-      );
-    });
-
     return (
-      <Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-      </Carousel>
-    );
+      <div className='fu' >
+        <Jumbotron>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <h1><FontAwesomeIcon icon="stroopwafel" /> iiMage</h1>
+          <p>
+          Each photo you take represents a split-second in time that can never be recaptured. That photo has the potential to shape memories for generations to come.
+  </p>
+          <p>
+          <MDBBtn href="/Login"><span className="loginbutton">Sign Up</span></MDBBtn>
+          </p>
+          
+          <br/>
+          <br/>
+          <br/>
+     
+        </Jumbotron>;
+      </div>
+
+
+    )
   }
 }
 

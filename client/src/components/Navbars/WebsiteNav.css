@@ -22,7 +22,11 @@ LoginButton {
 
 .NavBarEdit{
   background-color: #2bbbad;
-
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+.navbar-light .navbar-brand{
+  color:white;
 }
 
 

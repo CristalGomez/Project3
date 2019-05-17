@@ -34,7 +34,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar  className="NavBarEdit" light expand="md">
-          <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
+          <NavbarBrand  href="/"><span className="navSpan"><FontAwesomeIcon icon="stroopwafel" /> iiMage</span></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav pills className="ml-auto" navbar>
@@ -47,7 +47,10 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink href="/About"><span className="navSpan">About</span></NavLink>
               </NavItem>
-              <MDBBtn href="/Login">Login</MDBBtn>
+              <NavItem>
+                <NavLink href="/Login"><span className="navSpan">Login</span></NavLink>
+              </NavItem>
+              
             </Nav>
           </Collapse>
         </Navbar>

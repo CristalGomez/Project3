@@ -1,29 +1,51 @@
-body {
-    background-color: #a2bedf;
-    overflow: hidden;
-    text-align:center;
-     display: flex;
-     align-items: center;
-     justify-content: center; 
-     backgroundImage: url(${Background})
-   }
-   
-   body,
-   html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-   }
-   
-   svg {
-    width: 800px;
-    height: 600px;
-    visibility: hidden;
-    
-   }
-   
-   .penguinTop{
-    -webkit-tap-highlight-color:transparent;
-   }
-   
+.d-block {
+  width: 40%;
+}
+.jumbotron{
+  background-image: url("https://cdn.izbooking.com/images/2018/11/ninh-binh-tours-1542426082.jpg");
+  background-size: cover; 
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif 
+
+
+ 
+}
+.loginbutton{
+ color: white;
+}
+.help{
+
+  text-align: center;
+  /* background-color: aqua; */
+  background: rgba(red, green, blue, alpha);
+  /* opacity: .5; */
+  width: 25%;
+  height: 60%;
+  margin-top: 5.5%;
+  margin-left:8%;
+  position: absolute;
+  top:0;
+  left: 0;
+  
+}
+.row{
+  border: 10px;
+}
+.carouselDiv{
+  position: relative;
+}
+
+.iiMage{
+  margin-top: 3%;
+}
+.memories{
+margin-top: 2%;
+}
+.info{
+  text-align: center;
+  margin: 5rem;
+  
+}
+.carousel-item > img { 
+  width: 100%; 
+}
