@@ -2,11 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './WebsiteNav.css';
 import { Security, SecureRoute, ImplicitCallBack } from '@okta/okta-react'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Login from './Login'
-
-// import React from 'react';
 
 import {
   Collapse,
@@ -51,16 +48,16 @@ export default class Example extends React.Component {
         <Security issuer={"https://dev-285096.okta.com/oauth2/default"}
           client_id="0oalswgsbB1cPi0Ha356"
           redirect_uri={window.location.origin + '/implicit/callback'}
-          onAuthRequired={onAuthRequired}
-        >
+          onAuthRequired={onAuthRequired}>
+
           <Route path="/login" exact={true} component={Login} />
           <Route path="/signup" exact={true} component={SignUp} />
           <Route path='/ligin' render={() => <Login baseUrl='https://dev-285096.okta.com'/>}/>
           <Route path='/impicit/callback' component={ImplicitCallBack}/>
 
         </Security>
-      </Router>
-      <div>
+
+        <div>
         <Navbar className="NavBarEdit" light expand="md">
           <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
@@ -80,6 +77,8 @@ export default class Example extends React.Component {
           </Collapse>
         </Navbar>
       </div>
+      </Router>
+
     );
   }
 }
