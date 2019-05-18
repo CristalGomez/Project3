@@ -16,12 +16,6 @@ class About extends Component {
     string: 'XPageTwoString',
   };
 
-  componentDidMount() {
-    API.getDocuments()
-      .then((res) => { console.log(res.data) })
-      .catch((err) => console.log(err));
-  }
-
   render() {
     return (
       <Anime translateY={50} direction="alternate" easing='easeInOutSine' >

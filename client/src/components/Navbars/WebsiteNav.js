@@ -70,7 +70,7 @@ class Example extends React.Component {
       <Router>
         <div>
 
-        <Security issuer={"https://dev-285096.okta.com/oauth2/default"}
+        {/* <Security issuer={"https://dev-285096.okta.com/oauth2/default"}
           client_id="0oalswgsbB1cPi0Ha356"
           redirect_uri={window.location.origin + '/implicit/callback'}
           onAuthRequired={onAuthRequired}>
@@ -80,7 +80,7 @@ class Example extends React.Component {
           <Route path='/login' render={() => <Login baseUrl='https://dev-285096.okta.com'/>}/>
           <Route path='/impicit/callback' component={ImplicitCallBack}/>
 
-        </Security>
+        </Security> */}
 
         <div>
         <Navbar className="NavBarEdit" light expand="md">
@@ -90,13 +90,13 @@ class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav pills className="ml-auto" navbar>
               <NavItem className="navItem">
-                <Link to="/"><NavLink className="NavItem" href="/"><span className="navSpan">Home</span></NavLink></Link>
+                <NavLink className="NavItem" href="/"><span className="navSpan">Home</span></NavLink>
               </NavItem>
               <NavItem>
-              <Link to="/Explore"><NavLink>Explore</NavLink></Link>
+              <NavLink>Explore</NavLink>
               </NavItem>
               <NavItem>
-                <Link to="/About"><NavLink href="/About">About</NavLink></Link>
+                <NavLink href="/About">About</NavLink>
               </NavItem>
               <MDBBtn href="/Login">Login</MDBBtn>
             </Nav>

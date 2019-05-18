@@ -52,24 +52,24 @@ export default withAuth(class Home extends Component {
     authenticated: null
   };
 
-  checkAuthentication = async () => {
-    const authenticated = await this.props.auth.isAuthenticated();
-    if (authenticated !== this.state.auth) {
-      this.setState({ authenticated })
-    }
-  }
+  // checkAuthentication = async () => {
+  //   const authenticated = await this.props.auth.isAuthenticated();
+  //   if (authenticated !== this.state.auth) {
+  //     this.setState({ authenticated })
+  //   }
+  // }
 
-  async componentDidMount() {
-    this.checkAuthentication()
+  // async componentDidMount() {
+  //   this.checkAuthentication()
 
-    folderApi.getAllFolders()
-      .then((res) => { console.log(res.data) })
-      .catch((err) => console.log(err));
-  }
+  //   folderApi.getAllFolders()
+  //     .then((res) => { console.log(res.data) })
+  //     .catch((err) => console.log(err));
+  // }
 
-  async componentDidUpdate() {
-    this.checkAuthentication()
-  }
+  // async componentDidUpdate() {
+  //   this.checkAuthentication()
+  // }
 
   login = async () => {
     this.props.auth.login('/')
