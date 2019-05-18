@@ -4,6 +4,7 @@ import './WebsiteNav.css';
 import { Security, SecureRoute, ImplicitCallBack } from '@okta/okta-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Login from './Login'
+import SignUp from './SignUp'
 
 import {
   Collapse,
