@@ -1,9 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 import './WebsiteNav.css';
 import { Security, SecureRoute, ImplicitCallBack } from '@okta/okta-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Login from './Login'
+import profiles from '../../pages/Explore/profiles'; 
+/* This profiles import is temporary;
+use API when available. Instead of using profiles array, make an API query to this.props.location.pathname.split('/'
+[1]) so that it grabs the src for image in user object
+do this on component did mount, component did update, and only IF the image result exists */
+// import React from 'react';
+import  Login from '../../pages/Login'
+import SignUp from '../../pages/SignUp'
 import {
   Collapse,
   Navbar,
@@ -25,25 +32,44 @@ function onAuthRequired({history}){
   history.push('/login')
 }
 
-export default class Example extends React.Component {
+class Example extends React.Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
       profile: this.clicked
     };
   }
+  componentDidMount() {
+    console.log("component mounted one time")
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    //some kind of navbar collapse in state
+    //be careful because when you expand, this function will fire
+    //you can infinitely accidentally close the nav
+    // this.setState({  BAD!!
+    //   isOpen: false
+    // })
+    if (prevState.isOpen) {
+      this.setState({ 
+        isOpen: false
+      })
+    }
+    console.log("A prop or state change occurred.")
+  }
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
-  render(props) {
+  render() {
     return (
 
       <Router>
+        <div>
+
         <Security issuer={"https://dev-285096.okta.com/oauth2/default"}
           client_id="0oalswgsbB1cPi0Ha356"
           redirect_uri={window.location.origin + '/implicit/callback'}
@@ -61,30 +87,23 @@ export default class Example extends React.Component {
 
 
           <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
-
-
+        {profiles[this.props.location.pathname.split("/")[2] - 1] ? <div style={{width:'100%', display:'flex', justifyContent:'center'}}><img className="pfpImage" src = {profiles[this.props.location.pathname.split("/")[2] - 1].profile} /></div> : null}
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
 
             <Nav pills className="ml-auto" navbar>
 
               <NavItem className="navItem">
-              <Link to = "/">
-                <NavLink className="NavItem" href="/" ><span className="navSpan">Home</span></NavLink>
-                </Link>
+                <Link to="/"><NavLink className="NavItem" href="/"><span className="navSpan">Home</span></NavLink></Link>
               </NavItem>
 
               <NavItem>
-                <Link to="/Explore">
-                <NavLink className="Nv" href="/Explore" ><span className="navSpan">Explore</span></NavLink>
-                </Link>
+              <Link to="/Explore"><NavLink>Explore</NavLink></Link>
               </NavItem>
 
 
               <NavItem>
-                <Link to ="/About">
-                <NavLink href="/About"><span className="navSpan">About</span></NavLink>
-                </Link>
+                <Link to="/About"><NavLink href="/About">About</NavLink></Link>
               </NavItem>
               <Link to ="/Login">
               <MDBBtn href="/Login">Login</MDBBtn>
@@ -97,7 +116,10 @@ export default class Example extends React.Component {
 
         </Navbar>
       </div>
+          </div>
       </Router>
     );
   }
 }
+
+export default withRouter(Example);

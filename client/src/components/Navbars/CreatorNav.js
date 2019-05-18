@@ -24,7 +24,14 @@ export default class Example extends React.Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
-  }
+
+  } 
+  filterFunc = (text) => {
+    // if profile.mastery === "Beginner" {
+    //   show
+    // }
+  } 
+
   render() {
     return (
       <div>
@@ -33,13 +40,13 @@ export default class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink filter>Beginner Creator</NavLink>
+                <NavLink onClick={() => this.filterFunc('Beginner')}>Beginner Creator</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink filter>Intermediate Creator</NavLink>
+                <NavLink  onClick={() => this.filterFunc('Intermediate')}>Intermediate Creator</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink filter>Advanced Creator</NavLink>
+                <NavLink onClick={() => this.filterFunc('Advanced')}>Advanced Creator</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

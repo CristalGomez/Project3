@@ -1,3 +1,13 @@
+
+
+.pfpImage {
+    height: 150px;
+    border-radius: 50%;
+    width : 150px;
+    align-content: center;
+}
+
+
 /* XNavClass {
   color: red;
 } */
