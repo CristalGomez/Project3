@@ -8,6 +8,7 @@ import { Image } from '../../components/Image/Image';
 
 import categories from './categories';
 import './Creator.css';
+// import '../../components/Email/Email'
 
 
 class Creator extends Component {
@@ -33,10 +34,10 @@ class Creator extends Component {
       <h1>Creator Profile Page</h1>
       <div className = "grid">
         {categories.map((category, i) => (
-          console.log(categories[i].category),
           <Image {...category} key = {i} url = {categories[i].image} text = {categories[i].category} />
           ))}
-      <ImageUpload />
+          <ImageUpload />
+          {/* <Email /> */}
           </div> 
 
     </div>
