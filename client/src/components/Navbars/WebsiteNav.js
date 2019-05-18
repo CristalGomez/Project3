@@ -68,6 +68,8 @@ class Example extends React.Component {
       //these links will take you to called page
       //set them up so that this happens when specific btn is clicked
       <Router>
+        <div>
+
         <Security issuer={"https://dev-285096.okta.com/oauth2/default"}
           client_id="0oalswgsbB1cPi0Ha356"
           redirect_uri={window.location.origin + '/implicit/callback'}
@@ -101,6 +103,7 @@ class Example extends React.Component {
           </Collapse>
         </Navbar>
       </div>
+          </div>
       </Router>
 
     );
