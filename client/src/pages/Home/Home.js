@@ -5,14 +5,13 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Jumbo from '../../components/Jumbotron/Jumbo'
 import { Container, Row, Col } from 'reactstrap';
-import folderApi from '../../utils/foldersAPI'
-import {withAuth} from '@okta/okta-react'
 
 
 
 
 
-export default withAuth(class Home extends Component {
+
+class Home extends Component {
 
 
 
@@ -57,8 +56,8 @@ export default withAuth(class Home extends Component {
 
     )
   }
-});
+}
 
 
 //not sure what XPage is..
-// export default Xpage;
+export default Home;

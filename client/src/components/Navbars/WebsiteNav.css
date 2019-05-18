@@ -35,8 +35,12 @@ LoginButton {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   
 }
-.navbar-light .navbar-brand{
+.navbar-light .nav-link .navbar-brand{
   color:white;
+}
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  color: white;
+
 }
 
 
