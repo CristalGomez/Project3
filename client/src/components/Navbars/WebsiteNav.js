@@ -85,10 +85,12 @@ class Example extends React.Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav pills className="ml-auto" navbar>
                   <NavItem className="navItem">
-                    <Link to="/"><NavLink className="NavItem" href="/"><span className="navSpan">Home</span></NavLink></Link>
+                    {/* <Link to="/"><NavLink className="NavItem" href="/"><span className="navSpan">Home</span></NavLink></Link> */}
+                    <NavLink onClick={() => this.props.history.push('/')}>Home</NavLink>
                   </NavItem>
                   <NavItem>
-                    <Link onClick={() => this.props.history.push('/Explore')} to="/Explore">Explore</Link>>
+                    {/* <Link onClick={() => this.props.history.push('/Explore')} to="/Explore">Explore</Link>> */}
+                    <NavLink onClick={() => this.props.history.push('/Explore')}>Explore</NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink onClick={() => this.props.history.push('/About')}>About</NavLink>
