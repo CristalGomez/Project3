@@ -8,30 +8,24 @@ mongoose.connect(
 
 db.Folder.find({}).then((data)=> {
     console.log('imageSeed line 10', data[0])
-})
+    console.log('line 11', data[0].)
 
-const imageSeed = [
-   {
-       title: 'image1',
-       link: "https://avatars2.githubusercontent.com/u/43790938?s=460&v=4",
-       folderId: '5ce0301b878dd55fa8de4076'
-   }
-//    {
-//        title: "",
-//        link: ""
-//    },
-//    {
-//        title: "",
-//        link: ""
-//    }
-]
+    const imageSeed = [
+        {
+            title: 'image1',
+            link: "https://avatars2.githubusercontent.com/u/43790938?s=460&v=4",
+            folderId: data[0]._id
+        }
+     ]
+     
+     db.Image
+     .remove({})
+     .then(() => db.Image.collection.insertMany(imageSeed))
+     .then(data => {
+         console.log("image seed, line 32", data.result.n + " images inserted!");
+     })
+     .catch(err => {
+         console.log(err)
+     })
 
-db.Image
-.remove({})
-.then(() => db.Image.collection.insertMany(imageSeed))
-.then(data => {
-    console.log("image seed, line 32", data.result.n + " images inserted!");
-})
-.catch(err => {
-    console.log(err)
 })

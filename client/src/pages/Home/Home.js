@@ -12,9 +12,7 @@ import {withAuth} from '@okta/okta-react'
 
 
 
-export default withAuth(class Home extends Component {
-
-
+class Home extends Component {
 
   render() {
     return (
@@ -57,8 +55,7 @@ export default withAuth(class Home extends Component {
 
     )
   }
-});
+};
 
 
-//not sure what XPage is..
-// export default Xpage;
+export default Home

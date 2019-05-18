@@ -8,13 +8,14 @@ mongoose.connect(
 db.User.find({})
     .then((data) => {
         console.log("folder seed, line 10", data);
+        console.log('line 11', data[0].folders)
         const folderSeed = [
             {
                 name: "Wedding",
                 //skylar
                 userId: data[1]._id,
                 images: [
-                    data[0].folders
+                    data[1].folders
                 ]
             },
             {
