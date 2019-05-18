@@ -35,7 +35,7 @@ class App extends Component {
           <Route exact path='/Login' component={Login} />
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/Client' component={Client} />
-          <Route exact path='/Creator' component={Creator} />
+          <Route exact path='/Creator/:id?' component={Creator} />
 
           <Route exact path='/XCollection/:id' component={XCollection} />
           <Route component={XNoMatch} />

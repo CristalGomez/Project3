@@ -20,7 +20,7 @@ class Explore extends Component {
       <CreatorNav />
       <div className = "grid">
         {profiles.map((profile, i) => (
-          <Image {...profile} key = {i} url = {profiles[i].profile} />
+          <Image {...profile} id={profiles[i].id} key = {i} url = {profiles[i].profile} />
         ))}
       </div>
     </div>);
