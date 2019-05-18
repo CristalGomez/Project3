@@ -21,7 +21,7 @@ class Jumbo extends Component {
                     </p>
                     <br/>
                     <p>
-                        <MDBBtn href="/Login"><span className="loginbutton">Sign Up</span></MDBBtn>
+                        <MDBBtn href="/SignUp"><span className="loginbutton">Sign Up</span></MDBBtn>
                     </p>
 
                     <br />
