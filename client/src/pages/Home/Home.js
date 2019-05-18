@@ -5,14 +5,47 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Jumbo from '../../components/Jumbotron/Jumbo'
 import { Container, Row, Col } from 'reactstrap';
+import folderApi from '../../utils/foldersAPI'
+import {withAuth} from '@okta/okta-react'
 
 
 
 
 
-class XPage extends Component {
+export default withAuth(class Home extends Component {
 
-
+  // state = {
+  //   array: ['X', 'Page', 'Array'],
+  //   string: 'XPageString',
+  //   authenticated: null
+  // };
+  
+  // checkAuthentication = async () => {
+  //   const authenticated = await this.props.auth.isAuthenticated();
+  //   if (authenticated !== this.state.auth) {
+  //     this.setState({ authenticated })
+  //   }
+  // }
+  
+  // componentDidMount = async ()=> {
+  //   this.checkAuthentication()
+  
+  //   folderApi.getAllFolders()
+  //     .then((res) => { console.log(res.data) })
+  //     .catch((err) => console.log(err));
+  // }
+  
+  // componentDidUpdate = async () => {
+  //   this.checkAuthentication()
+  // }
+  
+  // login = async () => {
+  //   this.props.auth.login('/')
+  // }
+  
+  // logout = async () => {
+  //   this.props.auth.logout('/')
+  // }
 
   render() {
     return (
@@ -55,8 +88,8 @@ class XPage extends Component {
 
     )
   }
-}
+});
 
 
 //not sure what XPage is..
-export default XPage;
+// export default Xpage;
