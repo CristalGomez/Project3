@@ -28,10 +28,6 @@ class Creator extends Component {
 
   render() {
 
-    return (<div>
-        <h1>Creator Profile Page</h1>
-        <ImageUpload/>
-
     return (
     <div>
       <h1>Creator Profile Page</h1>
@@ -40,36 +36,14 @@ class Creator extends Component {
           console.log(categories[i].category),
           <Image {...category} key = {i} url = {categories[i].image} text = {categories[i].category} />
           ))}
+      <ImageUpload />
           </div> 
 
-    </div>);
+    </div>
+    
+    );
+
   }
 }
 
 export default Creator;
-
-// *******************************************************************************************
-// I thought this piece of code could work for pullin up a person from the database. not to sure to be honest -skylar
-// **********************************************************************************************
-// import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-
-// class XCollection extends Component {
-//   state = {
-//     idparam: ''
-//   };
-
-//   componentDidMount() {
-//     this.setState({ idparam: this.props.match.params.id });
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         Load XCollection with id:{this.state.idparam}
-//       </div>
-//     );
-//   }
-// }
-
-// export default XCollection;

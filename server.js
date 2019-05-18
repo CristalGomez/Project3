@@ -14,6 +14,30 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//sendgrid setup
+const cors = require('cors');
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+app.use(cors());
+
+app.get('/send-email', (req,res) => {
+	//get variables from query string
+	const { recipient, sender, topic, text } = req.query;
+
+	//sendgrid requirements
+	const msg = {
+		to: recipient,
+		from: sender,
+		subject: topic,
+		text: text
+	}
+	//send email
+
+	sgMail.send(msg)
+	.then((msg) => console.log(text))
+})
+
+
 /* MONGODB ORM */
 //  MongoDB object modeling tool
 const mongoose = require('mongoose');
@@ -44,7 +68,7 @@ app.use(logger('dev'));
 |* SET UP DATABASE *| 
 |*******************/
 // Connect to db
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mern-bp-DB";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/iimageDb";
 mongoose.connect(MONGODB_URI);
 const db = mongoose.connection;
 
@@ -55,8 +79,11 @@ db.on("error", (error) => {
 
 // Logs success if sucessfully connected to db
 db.once("open", () => {
-	console.log("DB connection successful!");
-});
+	require('./scripts/userSeed.js')
+	console.log("DB connection successful!")
+	// require('./scripts/folderSeed.js')
+	// require('./scripts/imageSeed.js')  
+  });
 
 /*****************|
 |* SET UP ROUTES *| 
@@ -69,6 +96,7 @@ if (process.env.NODE_ENV === 'production') {
 const routes = require("./routes");
 // Sets express to use routes
 app.use(routes);
+app.use(express.json())
 
 /*********************************|
 |* LISTEN FOR CONNECTION ON PORT *| 
