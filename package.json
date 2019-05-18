@@ -47,7 +47,7 @@
     "i": "^0.3.6",
     "if-env": "^1.0.4",
     "mdbreact": "^4.13.0",
-    "mongoose": "^5.2.10",
+    "mongoose": "^5.5.9",
     "morgan": "^1.9.0",
     "npm": "^6.9.0",
     "pure-react-carousel": "^1.20.0",

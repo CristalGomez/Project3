@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './WebsiteNav.css';
 import { Security, SecureRoute, ImplicitCallBack } from '@okta/okta-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Login from './Login'
-import SignUp from './SignUp'
+import Login from '../../pages/Login/Login'
+import SignUp from '../../pages/SignUp/SignUp'
 
 import {
   Collapse,
@@ -41,18 +41,7 @@ export default class Example extends React.Component {
 
       //these links will take you to called page
       //set them up so that this happens when specific btn is clicked
-      <Router>
-        <Security issuer={"https://dev-285096.okta.com/oauth2/default"}
-          client_id="0oalswgsbB1cPi0Ha356"
-          redirect_uri={window.location.origin + '/implicit/callback'}
-          onAuthRequired={onAuthRequired}>
 
-          <Route path="/login" exact={true} component={Login} />
-          <Route path="/signup" exact={true} component={SignUp} />
-          <Route path='/ligin' render={() => <Login baseUrl='https://dev-285096.okta.com'/>}/>
-          <Route path='/impicit/callback' component={ImplicitCallBack}/>
-
-        </Security>
 
         <div>
         <Navbar className="NavBarEdit" light expand="md">
@@ -77,7 +66,7 @@ export default class Example extends React.Component {
           </Collapse>
         </Navbar>
       </div>
-      </Router>
+     
 
     );
   }
