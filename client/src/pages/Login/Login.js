@@ -8,38 +8,38 @@ import folderApi from '../../utils/foldersAPI'
 class Login extends Component {
 
 
-    state = {
-    array: ['X', 'Page', 'Array'],
-    string: 'XPageString',
-    authenticated: null
-  };
+  //   state = {
+  //   array: ['X', 'Page', 'Array'],
+  //   string: 'XPageString',
+  //   authenticated: null
+  // };
   
-  checkAuthentication = async () => {
-    const authenticated = await this.props.auth.isAuthenticated();
-    if (authenticated !== this.state.auth) {
-      this.setState({ authenticated })
-    }
-  }
+  // checkAuthentication = async () => {
+  //   const authenticated = await this.props.auth.isAuthenticated();
+  //   if (authenticated !== this.state.auth) {
+  //     this.setState({ authenticated })
+  //   }
+  // }
   
-  componentDidMount = async ()=> {
-    this.checkAuthentication()
+  // componentDidMount = async ()=> {
+  //   this.checkAuthentication()
   
-    folderApi.getAllFolders()
-      .then((res) => { console.log(res.data) })
-      .catch((err) => console.log(err));
-  }
+  //   folderApi.getAllFolders()
+  //     .then((res) => { console.log(res.data) })
+  //     .catch((err) => console.log(err));
+  // }
   
-  componentDidUpdate = async () => {
-    this.checkAuthentication()
-  }
+  // componentDidUpdate = async () => {
+  //   this.checkAuthentication()
+  // }
   
-  login = async () => {
-    this.props.auth.login('/')
-  }
+  // login = async () => {
+  //   this.props.auth.login('/')
+  // }
   
-  logout = async () => {
-    this.props.auth.logout('/')
-  }
+  // logout = async () => {
+  //   this.props.auth.logout('/')
+  // }
 
   render() {
     return (<div>
