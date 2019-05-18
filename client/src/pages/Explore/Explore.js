@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { DefaultButton } from '../../components/Button';
+import { Image } from '../../components/Image';
 import profiles from './profiles.js';
 import CreatorNav from '../../components/Navbars/CreatorNav';
 class Explore extends Component {
@@ -18,10 +18,12 @@ class Explore extends Component {
     return (<div>
       <br></br>
       <CreatorNav />
-      {profiles.map((profile, i) => (
-      console.log(profiles[i].profile),
-        <DefaultButton {...profile} key = {i} url = {profiles[i].profile} />
+      <div className = "grid">
+        {profiles.map((profile, i) => (
+        console.log(profiles[i].profile),
+        <Image {...profile} key = {i} url = {profiles[i].profile} />
         ))}
+      </div>
     </div>);
   }
 }

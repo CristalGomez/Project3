@@ -6,4 +6,4 @@ import 'mdbreact/dist/css/mdb.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root') );

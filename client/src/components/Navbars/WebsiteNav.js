@@ -1,6 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './WebsiteNav.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Security, SecureRoute, ImplicitCallBack } from '@okta/okta-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Login from './Login'
+
 import {
   Collapse,
   Navbar,
@@ -12,13 +16,18 @@ import {
 } from 'reactstrap';
 
 
+function onAuthRequired({history}){
+  history.push('/login')
+}
+
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      profile: this.clicked
     };
   }
   toggle() {
@@ -26,11 +35,27 @@ export default class Example extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  render() {
+  render(props) {
     return (
-      <div>
-        <Navbar  className="NavBarEdit" light expand="md">
-          <NavbarBrand  href="/"><span className="navSpan"><FontAwesomeIcon icon="stroopwafel" /> iiMage</span></NavbarBrand>
+
+      //these links will take you to called page
+      //set them up so that this happens when specific btn is clicked
+      <Router>
+        <Security issuer={"https://dev-285096.okta.com/oauth2/default"}
+          client_id="0oalswgsbB1cPi0Ha356"
+          redirect_uri={window.location.origin + '/implicit/callback'}
+          onAuthRequired={onAuthRequired}>
+
+          <Route path="/login" exact={true} component={Login} />
+          <Route path="/signup" exact={true} component={SignUp} />
+          <Route path='/ligin' render={() => <Login baseUrl='https://dev-285096.okta.com'/>}/>
+          <Route path='/impicit/callback' component={ImplicitCallBack}/>
+
+        </Security>
+
+        <div>
+        <Navbar className="NavBarEdit" light expand="md">
+          <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav pills className="ml-auto" navbar>
@@ -51,92 +76,8 @@ export default class Example extends React.Component {
           </Collapse>
         </Navbar>
       </div>
+      </Router>
+
     );
   }
 }
-
-
-
-
-
-
-
-
-// The ...props means, spread all of the passed props onto this element
-// That way we don't have to define them all individually
-// const XNav = (props) => (
-//   // <span className="XNavClass" {...props}>
-//   //   XNav
-//   // </span>
-
-//   <div>
-//     <AppBar position="static">
-//       <Toolbar>
-//         <IconButton className='' color="inherit" aria-label="Menu">
-//           <MenuIcon />
-//         </IconButton>
-//         <Typography variant="h6" color="inherit" className='TitleName'>
-//           iimage
-//           </Typography>
-//         <Button color="inherit" className="LoginButton">Login</Button>
-//       </Toolbar>
-//     </AppBar>
-//   </div>
-
-// );
-
-// ButtonAppBar.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
-
-// export { XNav };
-
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import { XNav } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-
-// const styles = {
-//   root: {
-//     flexGrow: 1,
-//   },
-//   grow: {
-//     flexGrow: 1,
-//   },
-//   menuButton: {
-//     marginLeft: -12,
-//     marginRight: 20,
-//   },
-// };
-
-// function XNav(props) {
-//   const { classes } = props;
-//   return (
-//     <div className={classes.root}>
-//       <AppBar position="static">
-//         <Toolbar>
-//           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography variant="h6" color="inherit" className={classes.grow}>
-//             iimage
-//           </Typography>
-//           <Button color="inherit">Login</Button>
-//         </Toolbar>
-//       </AppBar>
-//     </div>
-//   );
-// }
-
-// // ButtonAppBar.propTypes = {
-// //   classes: PropTypes.object.isRequired,
-// // };
-
-// export default {XNav}(styles);

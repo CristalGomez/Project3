@@ -55,6 +55,8 @@ class XPage extends Component {
 
     )
   }
-}
+});
 
+
+//not sure what XPage is..
 export default XPage;
