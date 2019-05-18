@@ -6,6 +6,7 @@ import "./SignUp.css"
 
 class SignUp extends Component {
 
+
   constructor(props){
     super(props)
     this.setState = {

@@ -45,7 +45,7 @@ class Example extends React.Component {
     //   isOpen: false
     // })
     if (prevState.isOpen) {
-      this.setState({
+      this.setState({ 
         isOpen: false
       })
     }

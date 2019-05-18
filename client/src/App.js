@@ -25,12 +25,10 @@ library.add(faStroopwafel)
 
 class App extends Component {
   render() {
-    return <Router forceRefresh={!'pushState' in window.history}>
-      <div>
-        
+    return <Router>
+      <React.Fragment>
+
         <WebsiteNav />
-        
-        
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/Explore' component={Explore} />
@@ -43,7 +41,7 @@ class App extends Component {
           <Route exact path='/XCollection/:id' component={XCollection} />
           <Route component={XNoMatch} />
         </Switch>
-      </div>
+      </React.Fragment>
     </Router>
   }
 };
