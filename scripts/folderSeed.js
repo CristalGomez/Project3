@@ -6,7 +6,6 @@ mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/iimageDb"
 );
 db.User.find({})
-console.log(User, "line 9 folder seed")
     .then((data) => {
         console.log("folder seed, line 10", data);
         const folderSeed = [

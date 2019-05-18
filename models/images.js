@@ -9,7 +9,7 @@ const Image = new Schema({
         {
             title: {type: String},
             link: {type: String},
-            
+            folderId: {type: Schema.Types.ObjectId, ref: 'Folders'}
         }
     ]
 });

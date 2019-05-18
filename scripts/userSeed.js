@@ -26,13 +26,7 @@ const userSeed = [
         bio: "Full-Stack Web Developer. React.js Expert. I will style your website.",
         skill: "Creator",
         pImage: "https://files.slack.com/files-tmb/TDV67LNC8-FJQT0NA4V-c6e654a39f/sky_720.jpg",
-        folders: [
-            {
-                name: "Wedding",
-
-            }
-        ]
-            data[1].folders
+        folders: data[1].folders
         
     },
     {

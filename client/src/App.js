@@ -26,12 +26,9 @@ library.add(faStroopwafel)
 
 class App extends Component {
   render() {
-    return <Router forceRefresh={!'pushState' in window.history}>
+    return <Router>
       <div>
-        <Anime>
-        <WebsiteNav />
-        </Anime>
-        
+        {/* <WebsiteNav /> */}
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/Explore' component={Explore} />
