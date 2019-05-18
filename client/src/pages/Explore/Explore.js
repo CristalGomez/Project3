@@ -8,11 +8,7 @@ class Explore extends Component {
     
   };
 
-  componentDidMount() {
-    API.getDocuments()
-      .then((res) => { console.log(res.data) })
-      .catch((err) => console.log(err));
-  }
+
 
   render() {
     return (<div>
