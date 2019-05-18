@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Card from "../../components/Card/Cards"
-import card from "../../components/Card/Card"
+import card from "../../components/Card/card"
 import "../../pages/About/About.css"
 import Anime from 'react-anime'
 import { counter } from "@fortawesome/fontawesome-svg-core";
@@ -16,11 +16,7 @@ class About extends Component {
     string: 'XPageTwoString',
   };
 
-  componentDidMount() {
-    API.getDocuments()
-      .then((res) => { console.log(res.data) })
-      .catch((err) => console.log(err));
-  }
+
 
   render() {
     return (
