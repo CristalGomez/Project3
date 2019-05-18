@@ -1,3 +1,7 @@
+
+.colorTxt{
+    color: white;
+}
 .card {
     background: #2bbbad;
     border-radius: 2px;
@@ -7,6 +11,7 @@
     width: 325px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     text-align: left;
+    
 }
 
 .card>.img-container {
@@ -14,6 +19,7 @@
     overflow: hidden;
     text-align: center;
     background: #6CADDC;
+    
 }
 
 .card>.img-container>img {
@@ -24,6 +30,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 15px;
+    color: white;
 }
 
 @media only screen and (max-width: 600px) {

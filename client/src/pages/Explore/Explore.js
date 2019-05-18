@@ -5,16 +5,31 @@ import profiles from './profiles.js';
 import CreatorNav from '../../components/Navbars/CreatorNav';
 class Explore extends Component {
   state = {
-    
+    display : [...profiles]
   };
+
+filterHandler = (level) => {
+  if (level === "All") {
+    return this.setState({display: [...profiles]});
+  }
+  let currentDisplay = profiles.filter((person, i) => {
+    if (level === person.level) {
+      return person;
+    }
+    else {
+      return false;
+    }
+  })
+  this.setState({display: currentDisplay})
+}
 
   render() {
     return (<div>
       <br></br>
-      <CreatorNav />
+      <CreatorNav filterHandler = {this.filterHandler}/>
       <div className = "grid">
-        {profiles.map((profile, i) => (
-          <Image {...profile} id={profiles[i].id} key = {i} url = {profiles[i].profile} />
+        {this.state.display.map((person, i) => (
+          <Image {...person} id={person.id} key = {i} url = {person.profile} />
         ))}
       </div>
     </div>);
