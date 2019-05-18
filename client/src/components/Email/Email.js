@@ -16,7 +16,7 @@ sendEmail = () => {
         .catch(err => console.error(err))
 }
 
-class App extends Component {
+class Email extends Component {
     render() {
         const { email } = this.state;
         const spacer = {
@@ -56,4 +56,5 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Email;
+

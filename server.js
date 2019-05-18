@@ -5,7 +5,14 @@
 // Utilities for working with file and directory paths
 const path = require('path');
 // Load enviroment variables from .env into process.env
-// require('dotenv').config()
+require('dotenv').config()
+
+/* WEB FRAMEWORKS */
+// lightweight web framework for node server
+const express = require('express');
+// Initialize express under app variable
+const app = express();
+const PORT = process.env.PORT || 3001;
 
 //sendgrid setup
 const cors = require('cors');
@@ -30,14 +37,6 @@ app.get('/send-email', (req,res) => {
 	.then((msg) => console.log(text))
 })
 
-
-
-/* WEB FRAMEWORKS */
-// lightweight web framework for node server
-const express = require('express');
-// Initialize express under app variable
-const app = express();
-const PORT = process.env.PORT || 3001;
 
 /* MONGODB ORM */
 //  MongoDB object modeling tool
