@@ -8,14 +8,14 @@ class SignUp extends Component {
 
   constructor(props){
     super(props)
-    setState = {
+    this.setState = {
       array: ['X', 'PageTwo', 'Array'],
       string: 'XPageTwoString',
       currentUserEmail: '',
       currentUserName: '',
       value: '',
-      handleSubmit = this.handleSubmit.bind(this),
-      handleChange = this.handleChange.bind(this)
+      handleSubmit: this.handleSubmit.bind(this),
+      handleChange: this.handleChange.bind(this)
     }
   }
 
