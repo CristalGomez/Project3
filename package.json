@@ -14,8 +14,8 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "seedFolders": "node scripts/folderSeed.js",
-    "seedImages" : "node scripts/imageSeed.js",
-    "seedUsers" : "node scripts/imageSeed.js",
+    "seedImages": "node scripts/imageSeed.js",
+    "seedUsers": "node scripts/imageSeed.js",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
