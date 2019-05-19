@@ -9,10 +9,27 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.loginbutton {
+.loginbutton  {
     color: white;
+    background-color: #33b5e5;
 }
+
+.btn{
+    color: white;
+    background-color: #33b5e5;
+}
+
+.btn-default {
+    background-color: #33b5e5 !important;
+    color: #fff;
+}
+
+.icon{
+    color: #33b5e5 !important; 
+}
+
 
 .webName {
     font-size: 80px;
+    text-shadow: -2px -2px 0 #33b5e5, 2px -2px 0 #33b5e5, 2px 2px 0 #33b5e5;
 }

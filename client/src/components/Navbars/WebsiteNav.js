@@ -78,8 +78,8 @@ class Example extends React.Component {
 
           <div>
 
-            <Navbar className="NavBarEdit" light expand="md">
-              <NavbarBrand href="/"><FontAwesomeIcon icon="stroopwafel" /> iiMage</NavbarBrand>
+            <Navbar className="NavBarEdit"  light expand="md">
+              <NavbarBrand  href="/"><span className="brand"><FontAwesomeIcon icon="stroopwafel" /> iiMage</span></NavbarBrand>
               {profiles[this.props.location.pathname.split("/")[2] - 1] ? <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}><img className="pfpImage" src={profiles[this.props.location.pathname.split("/")[2] - 1].profile} /></div> : null}
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>

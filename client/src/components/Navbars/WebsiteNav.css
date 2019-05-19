@@ -31,25 +31,33 @@ LoginButton {
 } */ 
 
 .NavBarEdit{
-  background-color: #2bbbad;
+  background-color: #33b5e5!important;
+  /* background-color: #2bbbad; */
+  color: white;
+  
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   
 }
 .navbar-light .nav-link .navbar-brand{
   color:white;
 }
+
+
+
 .navbar.navbar-light .navbar-nav .nav-item .nav-link {
   color: white;
-
 }
 
-
-.navSpan{
-  color: aliceblue;
+.brand {
+  color: white;
 }
 span:hover{
-  color:  orange;
+  color:  black;
 }
+/* .navSpan{
+  color: aliceblue;
+}
+
 span:active{
   color:blue;
-}
+} */

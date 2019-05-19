@@ -1,17 +1,25 @@
     /* src/components/Post/Post.css */
 
     .Post {
-      border-radius: 3px;
-      box-shadow: 10px 10px 10px grey;
+      border-radius: 8px;
+      box-shadow: 4px 4px 4px grey;
       border: 1px solid gray;
-      background-color: #2bbbad;
+      /* background-color: #2bbbad; */
+      background-color: #33b5e5!important;
       /* border: 1px solid #e6e6e6;
         background-color: #fff; */
       margin-top: 3%;
       margin-bottom: 60px;
       margin-left: 5%;
       margin-right: 5%;
+      color: white;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
+
+    .span {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
 
     .Post-user {
       display: flex;
@@ -20,6 +28,7 @@
     }
 
     .Post-user-avatar {
+      
       width: 30px;
       height: 30px;
     }

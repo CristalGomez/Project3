@@ -1,0 +1,11 @@
+.bg-light  {
+    background-color: #33b5e5!important;
+}
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    color: white;
+    /* background-color: #2bbbad; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.creatorNav{
+    background-color: #33b5e5!important;
+}
